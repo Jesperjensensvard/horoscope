@@ -31,17 +31,38 @@ function updatethescope(){
      updateXHR.onreadystatechange = function() {
           if(updateXHR.readyState == 4 && updateXHR.status == 200) {
                var return_data = updateXHR.responseText;
-               document.getElementById("status").innerHTML = return_data;
+               document.getElementById("truefalse").innerHTML = return_data;
                getTheScope();
           }
      
      }
      updateXHR.send(vars);
-     document.getElementById("status").innerHTML = "processing...";
+     document.getElementById("truefalse").innerHTML = "processing...";
      
      
 }
 
+function DeletetheScope(){
+     var deleteXHR = new XMLHttpRequest();
+     var url = "deleteHoroscope.php";
+     var perNumer = document.getElementById("first_name[]").value;
+     var vars = "PersonNummer="+perNumer;
+     
+     deleteXHR.open("DELETE",url,true);
+     deleteXHR.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+     
+     deleteXHR.onreadystatechange = function() {
+          if(deleteXHR.readyState == 4 && deleteXHR.status == 200) {
+               var return_data = deleteXHR.responseText;
+               document.getElementById("truefalse").innerHTML = return_data;
+               getTheScope()
+          }
+     
+     }
+     deleteXHR.send(vars);
+     document.getElementById("truefalse").innerHTML = "processing...";
+     
+}
 function getTheScope() {
      var start = new XMLHttpRequest();
      var phpUrl = "super.php";
@@ -59,26 +80,6 @@ function getTheScope() {
      document.getElementById("status").innerHTML = "processing..........";
  }
  
-function DeletetheScope(){
-     var deleteXHR = new XMLHttpRequest();
-     var url = "deleteHoroscope.php";
-     var perNumer = document.getElementById("first_name[]").value;
-     var vars = "PersonNummer="+perNumer;
-     
-     deleteXHR.open("DELETE",url,true);
-     deleteXHR.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-     
-     deleteXHR.onreadystatechange = function() {
-          if(deleteXHR.readyState == 4 && deleteXHR.status == 200) {
-               var return_data = deleteXHR.responseText;
-               document.getElementById("status").innerHTML = return_data;
-          }
-     
-     }
-     deleteXHR.send(vars);
-     document.getElementById("status").innerHTML = "processing...";
-     
-}
 
 
 
