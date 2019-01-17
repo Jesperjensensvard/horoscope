@@ -76,16 +76,17 @@ for( $x = 0; $x < count($yearDays); $x++) {
 
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
     if($_SESSION['saved'] == null) {
-        if($var != "") {
-            $makeArray = $var;
-            $_SESSION['saved']= $makeArray;
-           alert("true");
+            if($var != "") {
+                $makeArray = $var;
+                $_SESSION['saved']= $makeArray;
+                echo "true";
+            } elseif($_SESSION['saved'] != null) {
+                echo "false";
         }
-    } else {
-        echo "false";
     }
-}
 
+}
+x
 
 
 

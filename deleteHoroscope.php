@@ -5,7 +5,7 @@
          unset($_SESSION['saved']);
          echo "true";
          include 'super.php';
-     }  else {
+        }else {
          echo "false";
      }
  }

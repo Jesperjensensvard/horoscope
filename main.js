@@ -11,12 +11,12 @@ function ajax_post(){
      xhr.onreadystatechange = function() {
           if(xhr.readyState == 4 && xhr.status == 200) {
                var return_data = xhr.responseText;
-               document.getElementById("status").innerHTML = return_data;
+               document.getElementById("truefalse").innerHTML = return_data;
                getTheScope();    
           }
      }
      xhr.send(vars);
-     document.getElementById("status").innerHTML = "processing...";
+     document.getElementById("truefalse").innerHTML = "processing...";
 }
 
 function updatethescope(){
