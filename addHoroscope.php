@@ -80,13 +80,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $makeArray = $var;
                 $_SESSION['saved']= $makeArray;
                 echo "true";
+            }
             } elseif($_SESSION['saved'] != null) {
                 echo "false";
         }
-    }
 
 }
-x
+
 
 
 
